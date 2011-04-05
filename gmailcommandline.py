@@ -21,8 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from getpass import getpass
-from optparse import OptionParser as option
+
 from src import utils
 from src import Mail
 
