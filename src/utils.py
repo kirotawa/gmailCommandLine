@@ -1,4 +1,6 @@
 
+
+
 import os.path
 import sys
 from getpass import getpass
@@ -23,15 +25,14 @@ def  parsing():
 	paramms = dict()
 
 	if opts.usermail is None:
-		if os.path.exists(".mailuser"):
-			with open(".mailuser") as user_email:
+		if os.path.exists("../.mailuser"):
+			with open("../.mailuser") as user_email:
 				paramms['user_email'] = user_email.read()
 		else:
 			print "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com. This necessary just one time"
 			sys.exit()
 	else:
-		print "here"
-		with open(".mailuser","w") as user_email:
+		with open("../.mailuser","w") as user_email:
 			user_email.write(opts.usermail)
 		paramms['user_email'] = opts.usermail
 	

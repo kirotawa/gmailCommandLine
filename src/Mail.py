@@ -1,4 +1,22 @@
+"""Copyright (C) 2011 by Leonidas S. Barbosa  - kirotawa@gmail.com
 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE."""
 
 import os
 import smtplib
@@ -39,18 +57,19 @@ class Mail(object):
 			attach_part = MIMEBase('application', "octet-stream")
 			attach_part.set_payload(open(filepath,"rb").read())
 			Encoders.encode_base64(attach_part)
-			attach_part.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(filepath))
+			attach_part.add_header('Content-Disposition', 'attachment; filename="%s"' \
+				% os.path.basename(filepath))
 			self.email.attach(attach_part)
 		except:				
-			print "Filed on attach file. Verify if the path of file was given and try again. Report error to kirotaw[here goes a sign]gmail[here a dot]com."
+			print "Filed on attach file. Verify if the path of file was given and try \
+				again. Report error to kirotaw[here goes a sign]gmail[here a dot]com."
 		
 
 	def send(self):
-		try:
-			server = smtplib.SMTP('smtp.gmail.com:587')
-			server.starttls()
-			server.login(self.fromaddr,self.passwd)
-			server.sendmail(self.fromaddr, self.toaddrs, self.email.as_string())
-			server.quit()
-		except:
-			print "Filed on send email. Verify if was are given all datas. Report error to kirotawa[hereve goes a sign]gmail[here a dot]com"
+		server = smtplib.SMTP('smtp.gmail.com:587')
+		server.starttls()
+		server.login(self.fromaddr,self.passwd)
+		server.sendmail(self.fromaddr, self.toaddrs, self.email.as_string())
+		server.quit()
+		#print "Filed on send email. Verify if was are given all datas. Report error \
+		#		to kirotawa[hereve goes a sign]gmail[here a dot]com"
