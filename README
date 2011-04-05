@@ -14,7 +14,7 @@ Options:
   -a ATTACH, --attachpath=ATTACH
                         Attach  a file to email.
   -m "MESSAGE", --message="MESSAGE"
-                        Content of message that you want to send.
+                        Content of message that you want to send. Use quotes to set the message.
   -u USERMAIL, --usermail=USERMAIL
                         You user email of Gmail. Just need set
                         in the first time that use this app.
