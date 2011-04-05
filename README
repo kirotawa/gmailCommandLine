@@ -2,23 +2,22 @@ Author: Leonidas S. Barbosa (alias: Kirotawa)
 E-mail: kirotawa[put a sign here]gmail[a dot here]com
 Version: 0.1.04.11 (virgo)
 
-Description: GmailCommandLine is a simple app to send e-mail by a  gmail account. It was build in order to send fast e-mail no be necessary open your gmail account in browser.
+Description: GmailCommandLine is a simple app to send e-mail via a  gmail account. It was built to send emails faster no be necessary to open your gmail account in browser.
 
 
 Uage: gmailcommandline.py [options]
 
 Options:
-  -h, --help            show this help message and exit
+  -h, --help            Show the help message.
   -d DESTINATION, --destination=DESTINATION
-                        set a destination address to send e-mail, else send to
-                        default: yourself mail
+                        Sets a destination address to send email, otherwise send to default, yourself email.
   -a ATTACH, --attachpath=ATTACH
                         Attach  a file to email.
   -m "MESSAGE", --message="MESSAGE"
-                        The message that you want to send.
+                        Content of message that you want to send.
   -u USERMAIL, --usermail=USERMAIL
-                        Here put you user email of Gmail.        Just need set
-                        in the first time that use this  program.
+                        You user email of Gmail. Just need set
+                        in the first time that use this app.
   -s SUBJECT, --subject=SUBJECT
                          The subject of email.
 
