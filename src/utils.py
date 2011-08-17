@@ -17,7 +17,8 @@ def  parsing():
 	parser.add_option("-m", "--message", action = "store", dest = "message", \
 		help = "The message that you want to send.")
 	parser.add_option("-u", "--usermail", action = "store", dest = "usermail", \
-		help = "Here put you user email of Gmail.	 Just need set in the first time that use this  program.")
+		help = "Here put you user email of Gmail.	 Just need set in the first \
+                time that use this  program.")
 	parser.add_option("-s", "--subject", action = "store", dest = "subject",\
 		help = " The subject of email.")
 	
@@ -29,7 +30,8 @@ def  parsing():
 			with open("../.mailuser") as user_email:
 				paramms['user_email'] = user_email.read()
 		else:
-			print "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com. This necessary just one time"
+			print "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
+            This necessary just one time"
 			sys.exit()
 	else:
 		with open("../.mailuser","w") as user_email:

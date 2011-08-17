@@ -59,12 +59,13 @@ class Mail(object):
 			attach_part = MIMEBase('application', "octet-stream")
 			attach_part.set_payload(open(filepath,"rb").read())
 			Encoders.encode_base64(attach_part)
-			attach_part.add_header('Content-Disposition', 'attachment; filename="%s"' \
-				% os.path.basename(filepath))
+			attach_part.add_header('Content-Disposition', 'attachment; filename=\
+                                    "%s"' % os.path.basename(filepath))
 			self.email.attach(attach_part)
 		except:				
-			print "Filed on attach file. Verify if the path of file was given and try \
-				again. Report error to kirotaw[here goes a sign]gmail[here a dot]com."
+			print "Filed on attach file. Verify if the path of file was given \
+            and try again. Report error to kirotaw[here goes a sign]gmail[here \
+            a dot]com."
 		
 
 	def send(self):
