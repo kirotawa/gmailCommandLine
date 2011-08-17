@@ -64,7 +64,7 @@ class Mail(object):
 			self.email.attach(attach_part)
 		except:				
 			print "Filed on attach file. Verify if the path of file was given \
-            and try again. Report error to kirotaw[here goes a sign]gmail[here \
+            and try again. Report error to kirotawa[here goes a sign]gmail[here \
             a dot]com."
 		
 
