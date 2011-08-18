@@ -1,9 +1,15 @@
 Author: Leonidas S. Barbosa (alias: Kirotawa)
 E-mail: kirotawa[put a sign here]gmail[a dot here]com
-Version: 0.1.04.11 (virgo)
+Version: 0.18.08.11 (octopus)
 
 Description: GmailCommandLine is a simple app to send e-mail via a  gmail account on unix bash. It was built to send emails faster no be necessary to open your gmail account in browser.
 
+New features: can use many e-mails with '@gmail', just put your new address or select it in the list
+    Example:
+            1 kirotawa@gmail.com
+            2 kirotawa2@gmail.com
+            3 kirotawa3@gmail.com
+            Choose a address : 
 
 Uage: gmailcommandline.py [options]
 
