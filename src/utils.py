@@ -38,11 +38,11 @@ def  parsing():
                 paramms['user_email'] = emails[input('Choose a email: ')-1].replace('\n','')
             
             else:
-                print "No have emails in .mailuser file"
+                print "\033[31m" + "No have emails in .mailuser file"
                 sys.exit()
 
         else:
-            print "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
+            print "\033[31m" + "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
             This necessary just one time"
             sys.exit()
     else:
@@ -59,7 +59,7 @@ def  parsing():
                 user_email.write(email)
                 paramms['user_email'] = opts.usermail
             else:
-                print "Type a gmail address"
+                print '\033[34m' + "Type a gmail address"
                 sys.exit()
 
     if opts.subject is not None:
@@ -78,8 +78,8 @@ def  parsing():
         paramms['passwd'] = getpass()
         
     else:
-        print "Missing: message or destination arguments that are necessary!"
-        print "To more information use: gmailcommandline -h"
+        print "\033[31m" + "Missing: message or destination arguments that are necessary!"
+        print "\033[34m" + "To more information use: gmailcommandline -h"
         sys.exit()
 
     return paramms
