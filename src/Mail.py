@@ -22,15 +22,13 @@ THE SOFTWARE."""
 
 import os
 import smtplib
+from email import Encoders
+from email.Utils import formatdate
+from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.Utils import formatdate
-from email import Encoders
-
 
 class Mail(object):
-	
 	
 	def __init__(self, **paramms):
 		self.fromaddr = paramms['user_email']
@@ -63,7 +61,7 @@ class Mail(object):
                                     "%s"' % os.path.basename(filepath))
 			self.email.attach(attach_part)
 		except:				
-			print "Filed on attach file. Verify if the path of file was given \
+			print "Failed on attach file. Verify if the path of file was given \
             and try again. Report error to kirotawa[here goes a sign]gmail[here \
             a dot]com."
 		

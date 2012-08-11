@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-
-import os.path
 import sys
+import os.path
 from getpass import getpass
 from optparse import OptionParser
+from printcolors import RED, BLUE
 
 def  parsing():
 
@@ -16,10 +16,10 @@ def  parsing():
     parser.add_option("-m", "--message", action = "store", dest = "message", \
         help = "The message that you want to send.")
     parser.add_option("-u", "--usermail", action = "store", dest = "usermail",\
-        help = "Here put you user email of Gmail. Just need set in the first \
+        help = "Put you user email of Gmail here. Neecery set in the first \
                 time that use this  program.")
     parser.add_option("-s", "--subject", action = "store", dest = "subject",\
-        help = " The subject of email.")
+        help = " The email's subject.")
 
     (opts, args) = parser.parse_args()
     paramms = dict()
@@ -38,12 +38,12 @@ def  parsing():
                 paramms['user_email'] = emails[input('Choose a email: ')-1].replace('\n','')
             
             else:
-                print "\033[31m" + "No have emails in .mailuser file"
+                print RED + "There is not emails in .mailuser file"
                 sys.exit()
 
         else:
-            print "\033[31m" + "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
-            This necessary just one time"
+            print RED + "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
+            It is necessary just once."
             sys.exit()
     else:
         emails = []
@@ -59,7 +59,7 @@ def  parsing():
                 user_email.write(email)
                 paramms['user_email'] = opts.usermail
             else:
-                print '\033[34m' + "Type a gmail address"
+                print BLUE + "Type a gmail address"
                 sys.exit()
 
     if opts.subject is not None:
@@ -78,8 +78,8 @@ def  parsing():
         paramms['passwd'] = getpass()
         
     else:
-        print "\033[31m" + "Missing: message or destination arguments that are necessary!"
-        print "\033[34m" + "To more information use: gmailcommandline -h"
+        print RED + "Missing: message or destination argumentsare necessary!"
+        print BLUE + "To more information use: gmailcommandline -h"
         sys.exit()
 
     return paramms
