@@ -73,6 +73,6 @@ class Mail(object):
 			server.login(self.fromaddr,self.passwd)
 			server.sendmail(self.fromaddr, self.toaddrs, self.email.as_string())
 			server.quit()
-			print "Succesfully sent email!"
+			print "Successfully sent email!"
 		except smtplib.SMTPException:
 			print "ERROR"	
