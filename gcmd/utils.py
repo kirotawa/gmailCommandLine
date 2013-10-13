@@ -4,19 +4,19 @@ import sys
 import os.path
 from getpass import getpass
 from optparse import OptionParser
-from printcolors import RED, BLUE
+
 
 def  parsing():
 
     parser = OptionParser()
-    parser.add_option("-d", "--destination", action = "store", dest = "destination",\
+    parser.add_option("-d", "--destinator", action = "store", dest = "destinator",\
         help = "set a destination address to send e-mail, else send to default: yourself mail")
     parser.add_option("-a", "--attachpath", action = "store", dest = "attach",\
         help = "Attach  a file to email.")
     parser.add_option("-m", "--message", action = "store", dest = "message", \
         help = "The message that you want to send.")
     parser.add_option("-u", "--usermail", action = "store", dest = "usermail",\
-        help = "Put you user email of Gmail here. Neecery set in the first \
+        help = "Set up your user email of Gmail here. Neecery set in the first \
                 time that use this  program.")
     parser.add_option("-s", "--subject", action = "store", dest = "subject",\
         help = " The email's subject.")
@@ -38,11 +38,11 @@ def  parsing():
                 paramms['user_email'] = emails[input('Choose a email: ')-1].replace('\n','')
             
             else:
-                print RED + "There is not emails in .mailuser file"
+                "There is not emails in .mailuser file"
                 sys.exit()
 
         else:
-            print RED + "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
+            "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
             It is necessary just once."
             sys.exit()
     else:
@@ -59,7 +59,7 @@ def  parsing():
                 user_email.write(email)
                 paramms['user_email'] = opts.usermail
             else:
-                print BLUE + "Type a gmail address"
+                "Type a gmail address"
                 sys.exit()
 
     if opts.subject is not None:
@@ -67,9 +67,9 @@ def  parsing():
     else:
         paramms['sub'] = "No Subject"
     
-    if opts.message is not None and opts.destination is not None:
+    if opts.message is not None and opts.destinator is not None:
         paramms['msg']  = opts.message
-        paramms['dest'] = opts.destination
+        paramms['dest'] = opts.destinator
 
         if opts.attach is not None:
             paramms['attach'] = opts.attach
@@ -78,8 +78,8 @@ def  parsing():
         paramms['passwd'] = getpass()
         
     else:
-        print RED + "Missing: message or destination argumentsare necessary!"
-        print BLUE + "To more information use: gmailcommandline -h"
+        "Missing: message or destination argumentsare necessary!"
+        "To more information use: gmailcommandline -h"
         sys.exit()
 
     return paramms
