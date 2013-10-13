@@ -9,4 +9,4 @@ clean:
 
 install: 
 	$(PYTHON) setup.py install 
-	install -m 755 gmailcommandline $(BINDIR)/gmailcommandline
+	install -m 755 gmailcommandline.py $(BINDIR)/gmailcommandline

@@ -1,8 +1,8 @@
 Author: Leonidas S. Barbosa (alias: Kirotawa)
 E-mail: kirotawa[put a sign here]gmail[a dot here]com
-Version: 0.11.08.12 (octopus-ink)
+Version: 0.11.1 (black cat)
 
-Description: GmailCommandLine is a simple app to send e-mail via a  gmail account on unix bash. It was built to send emails faster no be necessary to open your gmail account in browser.
+Description: GmailCommandLine is a simple app to send e-mail via a  gmail account on unix bash. It was built to send emails faster not being need to open your gmail account in browser.
 
 New features: can use many e-mails with '@gmail', just put your new address or select it in the list
     Example:
@@ -11,7 +11,7 @@ New features: can use many e-mails with '@gmail', just put your new address or s
             3 kirotawa3@gmail.com
             Choose a address : 
 
-Uage: gmailcommandline.py [options]
+Uage: gmailcommandline [options]
 
 Options:
   -h, --help            Show the help message.
@@ -20,12 +20,12 @@ Options:
   -a ATTACH, --attachpath=ATTACH
                         Attach  a file to email.
   -m "MESSAGE", --message="MESSAGE"
-                        Content of message that you want to send. Use quotes to set the message.
+                        Content of message. Use quotes to set the message.
   -u USERMAIL, --usermail=USERMAIL
                         You user email of Gmail. Just need set
                         in the first time that use this app.
-  -s SUBJECT, --subject=SUBJECT
-                         The subject of email.
+  -s "SUBJECT", --subject=SUBJECT
+                         The subject of email. Use quotes to set the subject if it has more than one word.
 
-Example: python gmailcommanline.py -u greg@gmail.com -s Teste -m "Hello World!!" -d jonhdoo@anymailserver.com -a /home/greg/imagens/partytoday.png
+Example: ./gmailcommanline -u greg@gmail.com -s Teste -m "Hello World!!" -d jonhdoo@anymailserver.com -a /home/greg/imagens/partytoday.png
 

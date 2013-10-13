@@ -21,8 +21,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from src import utils
-from src import Mail
+from gcmd import utils
+from gcmd import Mail
 
 if __name__ == "__main__":
 	paramms = utils.parsing()
