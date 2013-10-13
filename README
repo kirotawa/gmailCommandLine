@@ -17,6 +17,10 @@ Options:
   -h, --help            Show the help message.
   -d DESTINATION, --destination=DESTINATION
                         Sets a destination address to send email, otherwise send to default, yourself email.
+  -c CARBONCOPY_DEST --carboncopy
+                        Sets a carbon copy destination.
+  -b BLINDCC    --blindcarboncopy 
+                    Sets a blind carbon copy destination.
   -a ATTACH, --attachpath=ATTACH
                         Attach  a file to email.
   -m "MESSAGE", --message="MESSAGE"
