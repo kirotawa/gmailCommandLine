@@ -35,3 +35,8 @@ Example:
 
 INSTALLING:
      sudo make install
+
+
+Changelog:
+    - support to cc and bcc (version 0.11.1 - black cat )
+
