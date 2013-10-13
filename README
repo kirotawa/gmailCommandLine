@@ -29,3 +29,6 @@ Options:
 
 Example: ./gmailcommanline -u greg@gmail.com -s Teste -m "Hello World!!" -d jonhdoo@anymailserver.com -a /home/greg/imagens/partytoday.png
 
+
+INSTALLING:
+     sudo make install
