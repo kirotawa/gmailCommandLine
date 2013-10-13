@@ -27,8 +27,11 @@ Options:
   -s "SUBJECT", --subject=SUBJECT
                          The subject of email. Use quotes to set the subject if it has more than one word.
 
-Example: ./gmailcommanline -u greg@gmail.com -s Teste -m "Hello World!!" -d jonhdoo@anymailserver.com -a /home/greg/imagens/partytoday.png
+Example: 
+    (1) gmailcommanline -u greg@gmail.com -s Teste -m "Hello World!!" -d jonhdoo@anymailserver.com -a /home/greg/imagens/partytoday.png
 
+    (2) Sending for more than one destinator
+        gmailcommanline -u youruser@gmail.com -s 'some subject' -m 'some message' -d 'first@one.com,second@one.com,third@domain.com' 
 
 INSTALLING:
      sudo make install
