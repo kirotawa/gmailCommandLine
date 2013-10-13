@@ -11,6 +11,10 @@ def  parsing():
     parser = OptionParser()
     parser.add_option("-d", "--destinator", action = "store", dest = "destinator",\
         help = "set a destination address to send e-mail, else send to default: yourself mail")
+    parser.add_option("-c", "--carboncopy", action = "store", dest = "cc", \
+        help = "add a carboncopy destinator.")
+    parser.add_option("-b", "--blindcarboncopy", action = "store", dest = "bcc",\
+        help = "set a destination as blind cc.")
     parser.add_option("-a", "--attachpath", action = "store", dest = "attach",\
         help = "Attach  a file to email.")
     parser.add_option("-m", "--message", action = "store", dest = "message", \
@@ -70,7 +74,9 @@ def  parsing():
     if opts.message is not None and opts.destinator is not None:
         paramms['msg']  = opts.message
         paramms['dest'] = opts.destinator
-
+        paramms['cc'] = opts.cc 
+        paramms['bcc'] = opts.bcc
+    
         if opts.attach is not None:
             paramms['attach'] = opts.attach
         else:
