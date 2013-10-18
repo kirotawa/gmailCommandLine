@@ -6,24 +6,25 @@ from getpass import getpass
 from optparse import OptionParser
 
 
-def  parsing():
+def parsing():
 
     parser = OptionParser()
-    parser.add_option("-d", "--destinator", action = "store", dest = "destinator",\
-        help = "set a destination address to send e-mail, else send to default: yourself mail")
-    parser.add_option("-c", "--carboncopy", action = "store", dest = "cc", \
-        help = "add a carboncopy destinator.")
-    parser.add_option("-b", "--blindcarboncopy", action = "store", dest = "bcc",\
-        help = "set a destination as blind cc.")
-    parser.add_option("-a", "--attachpath", action = "store", dest = "attach",\
-        help = "Attach  a file to email.")
-    parser.add_option("-m", "--message", action = "store", dest = "message", \
-        help = "The message that you want to send.")
-    parser.add_option("-u", "--usermail", action = "store", dest = "usermail",\
-        help = "Set up your user email of Gmail here. Neecery set in the first \
+    parser.add_option("-d", "--destinator", action="store", dest="destinator",
+        help="set a destination address to send e-mail, else send to default:\
+             yourself mail")
+    parser.add_option("-c", "--carboncopy", action="store", dest="cc",
+        help="add a carboncopy destinator.")
+    parser.add_option("-b", "--blindcarboncopy", action="store", dest="bcc",
+        help="set a destination as blind cc.")
+    parser.add_option("-a", "--attachpath", action="store", dest="attach",
+        help="Attach  a file to email.")
+    parser.add_option("-m", "--message", action="store", dest="message",
+        help="The message that you want to send.")
+    parser.add_option("-u", "--usermail", action="store", dest="usermail",
+        help="Set up your user email of Gmail here. Neecery set in the first \
                 time that use this  program.")
-    parser.add_option("-s", "--subject", action = "store", dest = "subject",\
-        help = " The email's subject.")
+    parser.add_option("-s", "--subject", action="store", dest="subject",
+        help="The email's subject.")
 
     (opts, args) = parser.parse_args()
     paramms = dict()
@@ -33,14 +34,15 @@ def  parsing():
         if os.path.exists(file_path):
             with open(file_path) as user_email:
                 emails = user_email.readlines()
-            if len(emails) == 1:    
-            	paramms['user_email'] = emails[0].replace('\n','')
+            if len(emails) == 1:
+                paramms['user_email'] = emails[0].replace('\n', '')
 
             elif len(emails) > 1:
                 for num, email in enumerate(emails):
-                    print num+1, email.replace('\n','')
-                paramms['user_email'] = emails[input('Choose a email: ')-1].replace('\n','')
-            
+                    print num + 1, email.replace('\n', '')
+                paramms['user_email'] = emails[input('Choose a email: ') - 1].\
+                                        replace('\n', '')
+
             else:
                 "There is not emails in .mailuser file"
                 sys.exit()
@@ -55,7 +57,7 @@ def  parsing():
             with open(file_path) as _emails:
                 emails = _emails.readlines()
 
-        with open(file_path,'aw') as user_email:
+        with open(file_path, 'aw') as user_email:
             email = "%s\n" % opts.usermail
             if email in emails:
                 paramms['user_email'] = opts.usermail
@@ -70,19 +72,19 @@ def  parsing():
         paramms['sub'] = opts.subject
     else:
         paramms['sub'] = "No Subject"
-    
+
     if opts.message is not None and opts.destinator is not None:
-        paramms['msg']  = opts.message
+        paramms['msg'] = opts.message
         paramms['dest'] = opts.destinator
-        paramms['cc'] = opts.cc 
+        paramms['cc'] = opts.cc
         paramms['bcc'] = opts.bcc
-    
+
         if opts.attach is not None:
             paramms['attach'] = opts.attach
         else:
-            paramms['attach'] = None		
+            paramms['attach'] = None
         paramms['passwd'] = getpass()
-        
+
     else:
         "Missing: message or destination argumentsare necessary!"
         "To more information use: gmailcommandline -h"

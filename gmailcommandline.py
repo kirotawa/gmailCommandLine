@@ -25,7 +25,6 @@ from gcmd import utils
 from gcmd import Mail
 
 if __name__ == "__main__":
-	paramms = utils.parsing()
-	email = Mail.Mail(**paramms)
-	email.send()
-
+    paramms = utils.parsing()
+    email = Mail.Mail(**paramms)
+    email.send()
