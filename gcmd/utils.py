@@ -47,8 +47,8 @@ def parsing():
                 sys.exit()
 
         else:
-            print("Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
-            It is necessary just once.")
+            print("Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.")
+            print("It is necessary just once.")
             sys.exit()
     else:
         emails = []
