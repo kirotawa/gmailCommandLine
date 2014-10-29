@@ -7,7 +7,6 @@ from optparse import OptionParser
 
 
 def parsing():
-
     parser = OptionParser()
     parser.add_option("-d", "--destinator", action="store", dest="destinator",
         help="set a destination address to send e-mail, else send to default:\
@@ -44,12 +43,12 @@ def parsing():
                                         replace('\n', '')
 
             else:
-                "There is not emails in .mailuser file"
+                print("There is not emails in .mailuser file")
                 sys.exit()
 
         else:
-            "Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
-            It is necessary just once."
+            print("Please use -u to set a gmail user, eg.: -u jonhnydoo@gmail.com.\
+            It is necessary just once.")
             sys.exit()
     else:
         emails = []
@@ -65,7 +64,7 @@ def parsing():
                 user_email.write(email)
                 paramms['user_email'] = opts.usermail
             else:
-                "Type a gmail address"
+                print("Type a gmail address")
                 sys.exit()
 
     if opts.subject is not None:
@@ -86,8 +85,8 @@ def parsing():
         paramms['passwd'] = getpass()
 
     else:
-        "Missing: message or destination argumentsare necessary!"
-        "To more information use: gmailcommandline -h"
+        print("Missing: message or destination argumentsare necessary!")
+        print("To more information use: gmailcommandline -h")
         sys.exit()
 
     return paramms
