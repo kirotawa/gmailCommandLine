@@ -2,9 +2,9 @@ Author: Leonidas S. Barbosa (alias: Kirotawa)
 E-mail: kirotawa[put a sign here]gmail[a dot here]com
 Version: 0.11.1 (black cat)
 
-Description: GmailCommandLine is a simple app to send e-mail via a  gmail account on unix bash. It was built to send emails faster not being need to open your gmail account in browser.
+Description: GmailCommandLine is a simple app to send e-mail via a gmail account on unix bash. It was built to send emails faster, not being need to open your gmail account in browser.
 
-New features: can use many e-mails with '@gmail', just put your new address or select it in the list
+New features: support to different '@gmail' accounts, just put your new address or select it in the list
     Example:
             1 kirotawa@gmail.com
             2 kirotawa2@gmail.com
@@ -20,16 +20,16 @@ Options:
   -c CARBONCOPY_DEST --carboncopy
                         Sets a carbon copy destination.
   -b BLINDCC    --blindcarboncopy 
-                    Sets a blind carbon copy destination.
+                        Sets a blind carbon copy destination.
   -a ATTACH, --attachpath=ATTACH
                         Attach  a file to email.
   -m "MESSAGE", --message="MESSAGE"
                         Content of message. Use quotes to set the message.
   -u USERMAIL, --usermail=USERMAIL
-                        You user email of Gmail. Just need set
-                        in the first time that use this app.
+                        Your user email from a Gmail account. Just need to set
+                        in the first time you use this app.
   -s "SUBJECT", --subject=SUBJECT
-                         The subject of email. Use quotes to set the subject if it has more than one word.
+                        The subject of email. Use quotes to set the subject if it has more than one word.
 
 Example: 
     (1) gmailcommanline -u greg@gmail.com -s Teste -m "Hello World!!" -d jonhdoo@anymailserver.com -a /home/greg/imagens/partytoday.png
